@@ -4,6 +4,20 @@ Claude Code üzerinden açık istekle Codex, Grok, Gemini (`agy`) veya DeepSeek'
 
 **Kendiliğinden model çağırmaz.** Kullanıcı açıkça devir veya çapraz denetim istemelidir. Dış modellerin kullanımı kendi hesap/API koşullarınıza tabidir; `--dry-run` yalnız yerel hazırlığı kontrol eder.
 
+## Tek promptla kurulum
+
+Aşağıdaki metni Windows'taki Claude Code oturumuna tek mesaj olarak yapıştırın. Depo şu anda **özeldir**; GitHub hesabınızın erişimi yoksa kurulum başlayamaz.
+
+```text
+Windows bilgisayarıma https://github.com/Zaza321/delegate-and-audit deposundaki Claude Code skillini kur. Hedef klasör $HOME\.claude\skills\delegate-and-audit olsun. Bu GitHub deposu özelse yalnız mevcut hesabımın erişimiyle klonla; erişim yoksa durumu bildir, kimlik bilgilerini sohbete isteme.
+
+Önce Git, PowerShell 7 (pwsh), Python 3.10+ ve depo erişimini kontrol et. Depoyu hedefin yanında geçici bir klasöre klonla; SKILL.md, scripts/ ve references/ dosyalarının yerinde olduğunu doğrula. Mevcut kurulum varsa henüz değiştirme.
+
+Geçici klonun kökünde model çağırmadan `python tests/test_release.py` çalıştır. Node.js varsa ayrıca `pwsh -NoProfile -File tests/test_delegate.ps1` çalıştır; Node.js yoksa ikinci testi atlayıp nedenini yaz. Kullanacağım sağlayıcıların CLI/oturum durumunu kontrol et ve eksikleri listele; canlı model çağrısı yapma. DeepSeek API anahtarını sohbete, komut satırına veya repo dosyasına yazma; gerekiyorsa etkileşimli Set-DeepSeekKey.ps1 yolunu anlat.
+
+Testler ve temel dosya kontrolleri başarılıysa geçici klonu hedefe kur. Hedef klasör zaten varsa önce onu $HOME\.claude\skill-backups altında zaman damgalı ayrı bir klasöre taşı; hiçbir dosyayı silme veya üzerine yazma. Kurulum başarısızsa eski kurulumu yerinde bırak ya da geri getir. Sonunda kurulan mutlak yolu, varsa yedek yolunu, Git commit'ini, test sonuçlarını, eksik gereksinimleri ve Claude Code oturumunu yeniden açmam gerekip gerekmediğini kısa bir özetle bildir.
+```
+
 ## Gereksinimler
 
 - Windows 10/11, PowerShell 7 (`pwsh`), Python 3.10+ ve Git.
@@ -16,7 +30,7 @@ Depoyu `~/.claude/skills/delegate-and-audit` konumuna klonlayın veya içeriğin
 
 ```powershell
 New-Item -ItemType Directory -Force (Join-Path $HOME '.claude\skills') | Out-Null
-git clone <repository-url> (Join-Path $HOME '.claude\skills\delegate-and-audit')
+git clone https://github.com/Zaza321/delegate-and-audit.git (Join-Path $HOME '.claude\skills\delegate-and-audit')
 ```
 
 Bu klasörde `SKILL.md` ve `scripts/` birlikte olmalıdır. Skill başka bir dizine kurulursa aşağıdaki betik yollarını yeni konuma uyarlayın. CLI'larda oturum açmayı kendi sağlayıcılarının yönergeleriyle tamamlayın. DeepSeek kullanacaksanız `DEEPSEEK_API_KEY` ortam değişkenini ayarlayın **veya** `pwsh -File scripts/Set-DeepSeekKey.ps1` komutuyla anahtarı etkileşimli girin; anahtarı repo, görev notu veya komut satırına koymayın.
