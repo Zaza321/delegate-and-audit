@@ -6,10 +6,10 @@ Claude Code üzerinden açık istekle Codex, Grok, Gemini (`agy`) veya DeepSeek'
 
 ## Tek promptla kurulum
 
-Aşağıdaki metni Windows'taki Claude Code oturumuna tek mesaj olarak yapıştırın. Depo şu anda **özeldir**; GitHub hesabınızın erişimi yoksa kurulum başlayamaz.
+Aşağıdaki metni Windows'taki Claude Code oturumuna tek mesaj olarak yapıştırın.
 
 ```text
-Windows bilgisayarıma https://github.com/Zaza321/delegate-and-audit deposundaki Claude Code skillini kur. Hedef klasör $HOME\.claude\skills\delegate-and-audit olsun. Bu GitHub deposu özelse yalnız mevcut hesabımın erişimiyle klonla; erişim yoksa durumu bildir, kimlik bilgilerini sohbete isteme.
+Windows bilgisayarıma https://github.com/Zaza321/delegate-and-audit deposundaki Claude Code skillini kur. Hedef klasör $HOME\.claude\skills\delegate-and-audit olsun. Depoya erişim hatası olursa durumu bildir; kimlik bilgilerini sohbete isteme.
 
 Önce Git, PowerShell 7 (pwsh), Python 3.10+ ve depo erişimini kontrol et. Depoyu hedefin yanında geçici bir klasöre klonla; SKILL.md, scripts/ ve references/ dosyalarının yerinde olduğunu doğrula. Mevcut kurulum varsa henüz değiştirme.
 
@@ -70,4 +70,4 @@ pwsh -NoProfile -File tests/test_delegate.ps1
 
 ## Lisans
 
-Bu depoya henüz açık kaynak lisansı eklenmedi. Herkese açık paylaşmadan önce telif sahibi ve lisans koşulları ayrıca belirlenecektir.
+Bu depoya henüz açık kaynak lisansı eklenmedi. Lisans koşulları ayrıca belirlenecektir.
