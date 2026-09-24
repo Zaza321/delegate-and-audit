@@ -1,0 +1,8 @@
+{
+  "directories": [".ssh", ".aws", ".gnupg", ".kube", ".docker"],
+  "names": [".npmrc", ".pypirc", ".envrc", ".netrc", ".git-credentials", "credentials.json", "auth.json", "id_rsa", "id_ed25519", "id_ecdsa", "id_dsa"],
+  "prefixes": [".env", "secrets."],
+  "suffixes": [".env", ".pem", ".p12", ".pfx", ".key", ".keystore", ".ppk", ".jks", ".p8", ".tfvars", ".tfvars.json"],
+  "service_account_prefix": "service-account",
+  "service_account_suffix": ".json"
+}
